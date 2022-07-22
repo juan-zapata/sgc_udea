@@ -1,15 +1,14 @@
 package com.proyectointegrador.sgc_udea.model;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "area_conocimiento")
+@AllArgsConstructor
+@NoArgsConstructor
 public class AreaConocimiento {
     @Id
     @Column(name = "idarea_conocimiento")

@@ -4,6 +4,8 @@ import lombok.Data;
 
 @Data
 public class MateriaDTO {
+
+
     private Integer cdmateria;
     private String dsnombre;
     private String tipocurso;

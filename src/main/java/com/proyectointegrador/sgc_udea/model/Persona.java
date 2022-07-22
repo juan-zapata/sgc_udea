@@ -1,12 +1,16 @@
 package com.proyectointegrador.sgc_udea.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "persona")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Persona {
     @Id
     @Column(name = "numero_id")

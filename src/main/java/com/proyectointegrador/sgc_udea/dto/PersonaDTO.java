@@ -2,10 +2,15 @@ package com.proyectointegrador.sgc_udea.dto;
 
 import lombok.Data;
 
+import javax.validation.constraints.NotBlank;
+
 @Data
 public class PersonaDTO {
+    @NotBlank(message = "el numeroId es obligatorio")
     private Integer numeroId;
+    @NotBlank(message = "el nombre es obligatorio")
     private String nombre;
+    @NotBlank(message = "el apellido es obligatorio")
     private String apellido;
 
     public Integer getNumeroId() {
