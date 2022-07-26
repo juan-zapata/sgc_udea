@@ -6,6 +6,7 @@ import com.proyectointegrador.sgc_udea.dto.PersonaDTO;
 import com.proyectointegrador.sgc_udea.model.AreaConocimiento;
 import com.proyectointegrador.sgc_udea.model.Persona;
 import com.proyectointegrador.sgc_udea.service.PersonaService;
+import jdk.swing.interop.SwingInterOpUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
