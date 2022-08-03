@@ -14,3 +14,4 @@ public interface MateriaRepository extends JpaRepository<Materia, Integer> {
     List<MateriaDTO> getByNivel(String nivel);
 
 }
+
