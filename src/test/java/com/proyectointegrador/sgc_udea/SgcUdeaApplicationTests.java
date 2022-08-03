@@ -5,9 +5,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class SgcUdeaApplicationTests {
-
-	@Test
+/*
+ * @Test
 	void contextLoads() {
 	}
+ * 
+ */
+	
 
 }
