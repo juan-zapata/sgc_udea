@@ -1,12 +1,11 @@
 package com.proyectointegrador.sgc_udea.controller;
 
 
-import com.proyectointegrador.sgc_udea.dto.AreaConocimientoDTO;
 import com.proyectointegrador.sgc_udea.dto.PersonaDTO;
-import com.proyectointegrador.sgc_udea.model.AreaConocimiento;
+import com.proyectointegrador.sgc_udea.dto.SedeDTO;
 import com.proyectointegrador.sgc_udea.model.Persona;
-import com.proyectointegrador.sgc_udea.service.PersonaService;
-import jdk.swing.interop.SwingInterOpUtils;
+import com.proyectointegrador.sgc_udea.model.Sede;
+import com.proyectointegrador.sgc_udea.service.SedeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -15,24 +14,23 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/persona")
-public class PersonaController {
+@RequestMapping("/sedes")
+public class SedeController {
 
 
-    private final PersonaService personaService;
+    private final SedeService sedeService;
 
-
-    public PersonaController(PersonaService personaService) {
-        this.personaService = personaService;
+    public SedeController(SedeService sedeService) {
+        this.sedeService = sedeService;
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> create(@Validated @RequestBody PersonaDTO personaDTO){
+    public ResponseEntity<?> create(@Validated @RequestBody SedeDTO sedeDTO){
         try{
-            Persona persona = new Persona(personaDTO.getNumeroId(), personaDTO.getNombre(), personaDTO.getApellido());
-            if(persona.getNumeroId() != null  &&
-            persona.getApellido() != null){
-                personaService.save(persona);
+            Sede sede = new Sede(sedeDTO.getIdSede(), sedeDTO.getNombreSede());
+            if(sede.getIdSede() != null  &&
+                    sede.getNombreSede() != null){
+                sedeService.save(sede);
                 return new ResponseEntity(HttpStatus.CREATED);
             }else{
                 return new ResponseEntity(HttpStatus.BAD_REQUEST);
@@ -44,28 +42,28 @@ public class PersonaController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<?> update(@RequestBody PersonaDTO personaDTO){
-        Persona persona = new Persona(personaDTO.getNumeroId(), personaDTO.getNombre(), personaDTO.getApellido());
-        return new ResponseEntity(personaService.update(persona),HttpStatus.CREATED);
+    public ResponseEntity<?> update(@RequestBody SedeDTO sedeDTO){
+        Sede sede = new Sede(sedeDTO.getIdSede(), sedeDTO.getNombreSede());
+        return new ResponseEntity(sedeService.update(sede),HttpStatus.CREATED);
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable(value = "id") Integer id){
-        personaService.delete(id);
+        sedeService.delete(id);
         return new ResponseEntity(HttpStatus.OK);
     }
 
     @GetMapping("/retornar-persona/{id}")
     public ResponseEntity<Persona> getById(@PathVariable(value = "id") Integer id){
-        return new ResponseEntity(personaService.getById(id),HttpStatus.OK);
+        return new ResponseEntity(sedeService.getById(id),HttpStatus.OK);
     }
 
     @GetMapping("/getAll")
     public ResponseEntity<List<Persona>> getAll(){
         try{
-            List<Persona> personas = personaService.getAll();
-            if(!personas.isEmpty()){
-                return new ResponseEntity(personas, HttpStatus.OK);
+            List<Sede> sedes = sedeService.getAll();
+            if(!sedes.isEmpty()){
+                return new ResponseEntity(sedes, HttpStatus.OK);
             }
         }catch (Exception e){
             System.out.println(e);
@@ -73,6 +71,4 @@ public class PersonaController {
         }
         return new ResponseEntity(HttpStatus.OK);
     }
-
-
 }
