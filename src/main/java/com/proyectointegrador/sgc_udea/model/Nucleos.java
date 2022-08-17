@@ -1,12 +1,16 @@
 package com.proyectointegrador.sgc_udea.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "nucleos")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Nucleos {
     @Id
     @Column(name = "idNucleos")
@@ -40,5 +44,9 @@ public class Nucleos {
 
     public void setInformacion(String informacion) {
         this.informacion = informacion;
+    }
+
+    public Object getDescripcion() {
+        return null;
     }
 }
