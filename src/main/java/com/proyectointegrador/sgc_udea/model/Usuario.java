@@ -1,12 +1,11 @@
 package com.proyectointegrador.sgc_udea.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "usuario")
 @AllArgsConstructor
@@ -15,12 +14,4 @@ public class Usuario {
     @Id
     @Column(name = "idUsuario")
     private Integer idUsuario;
-
-    public Integer getIdUsuario() {
-        return this.idUsuario;
-    }
-
-    public void setIdUsuario(Integer idUsuario) {
-        this.idUsuario = idUsuario;
-    }
 }

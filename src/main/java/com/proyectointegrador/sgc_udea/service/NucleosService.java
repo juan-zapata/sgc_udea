@@ -19,7 +19,7 @@ public class NucleosService {
 
     @Transactional
     public void save(Nucleos nucleos){
-        nucleosRepository.save(nucleos);
+        this.nucleosRepository.saveAndFlush(nucleos);
     }
 
     public Nucleos update(Nucleos nucleos){

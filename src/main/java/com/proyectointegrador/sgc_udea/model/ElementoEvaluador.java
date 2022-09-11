@@ -1,10 +1,14 @@
 package com.proyectointegrador.sgc_udea.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
+@Getter
+@Setter
 @Entity
 @Table(name = "elemento_evaluador")
 public class ElementoEvaluador {
@@ -15,19 +19,4 @@ public class ElementoEvaluador {
     @Column(name = "det_elemento")
     private String detElemento;
 
-    public Integer getIdElemento() {
-        return this.idElemento;
-    }
-
-    public void setIdElemento(Integer idElemento) {
-        this.idElemento = idElemento;
-    }
-
-    public String getDetElemento() {
-        return this.detElemento;
-    }
-
-    public void setDetElemento(String detElemento) {
-        this.detElemento = detElemento;
-    }
 }

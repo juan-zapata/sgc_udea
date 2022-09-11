@@ -29,10 +29,9 @@ public class PersonaController {
     @PostMapping("/create")
     public ResponseEntity<?> create(@Validated @RequestBody PersonaDTO personaDTO){
         try{
-            Persona persona = new Persona(personaDTO.getNumeroId(), personaDTO.getNombre(), personaDTO.getApellido());
-            if(persona.getNumeroId() != null  &&
-            persona.getApellido() != null){
-                personaService.save(persona);
+            if(personaDTO.getNumeroId() != null  &&
+            personaDTO.getApellido() != null){
+                personaService.save(personaDTO);
                 return new ResponseEntity(HttpStatus.CREATED);
             }else{
                 return new ResponseEntity(HttpStatus.BAD_REQUEST);

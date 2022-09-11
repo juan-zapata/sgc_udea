@@ -1,10 +1,14 @@
 package com.proyectointegrador.sgc_udea.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
+@Getter
+@Setter
 @Entity
 @Table(name = "rol")
 public class Rol {
@@ -15,19 +19,4 @@ public class Rol {
     @Column(name = "nombrerol")
     private String nombrerol;
 
-    public Integer getIdRol() {
-        return this.idRol;
-    }
-
-    public void setIdRol(Integer idRol) {
-        this.idRol = idRol;
-    }
-
-    public String getNombrerol() {
-        return this.nombrerol;
-    }
-
-    public void setNombrerol(String nombrerol) {
-        this.nombrerol = nombrerol;
-    }
 }

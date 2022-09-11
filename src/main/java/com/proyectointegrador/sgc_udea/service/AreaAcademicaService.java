@@ -40,5 +40,4 @@ public class AreaAcademicaService {
     public List<AreaAcademica> getAll(){
         return areaAcademicaRepository.findAll();
     }
-
 }

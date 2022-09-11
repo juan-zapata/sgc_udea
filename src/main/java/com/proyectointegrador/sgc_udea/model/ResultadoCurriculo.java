@@ -1,10 +1,14 @@
 package com.proyectointegrador.sgc_udea.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
+@Getter
+@Setter
 @Entity
 @Table(name = "resultado_curriculo")
 public class ResultadoCurriculo {
@@ -22,35 +26,4 @@ public class ResultadoCurriculo {
     @Column(name = "micro_curriculo_cod_microcurriculo")
     private Integer microCurriculoCodMicrocurriculo;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getResultadoIdResultado() {
-        return this.resultadoIdResultado;
-    }
-
-    public void setResultadoIdResultado(Integer resultadoIdResultado) {
-        this.resultadoIdResultado = resultadoIdResultado;
-    }
-
-    public Integer getElementoEvaluadorIdElemento() {
-        return this.elementoEvaluadorIdElemento;
-    }
-
-    public void setElementoEvaluadorIdElemento(Integer elementoEvaluadorIdElemento) {
-        this.elementoEvaluadorIdElemento = elementoEvaluadorIdElemento;
-    }
-
-    public Integer getMicroCurriculoCodMicrocurriculo() {
-        return this.microCurriculoCodMicrocurriculo;
-    }
-
-    public void setMicroCurriculoCodMicrocurriculo(Integer microCurriculoCodMicrocurriculo) {
-        this.microCurriculoCodMicrocurriculo = microCurriculoCodMicrocurriculo;
-    }
 }

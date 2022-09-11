@@ -1,8 +1,11 @@
 package com.proyectointegrador.sgc_udea.service;
 
+import com.proyectointegrador.sgc_udea.dto.PersonaDTO;
+import com.proyectointegrador.sgc_udea.model.CompetenciaCurriculo;
 import com.proyectointegrador.sgc_udea.model.Materia;
 import com.proyectointegrador.sgc_udea.model.Persona;
 import com.proyectointegrador.sgc_udea.repository.PersonaRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,8 +21,9 @@ public class PersonaService {
         this.personaRepository = personaRepository;
     }
 
-    public Persona save(Persona persona){
-        return personaRepository.save(persona);
+    public Persona save(PersonaDTO persona){
+        ModelMapper mm = new ModelMapper();
+        return personaRepository.save(mm.map(persona, Persona.class));
     }
 
     public Persona update(Persona persona){

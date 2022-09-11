@@ -1,10 +1,14 @@
 package com.proyectointegrador.sgc_udea.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
+@Getter
+@Setter
 @Entity
 @Table(name = "bibliografia")
 public class Bibliografia {
@@ -18,27 +22,4 @@ public class Bibliografia {
     @Column(name = "bb_url")
     private String bbUrl;
 
-    public Integer getIdBibliografia() {
-        return this.idBibliografia;
-    }
-
-    public void setIdBibliografia(Integer idBibliografia) {
-        this.idBibliografia = idBibliografia;
-    }
-
-    public String getBbDetalle() {
-        return this.bbDetalle;
-    }
-
-    public void setBbDetalle(String bbDetalle) {
-        this.bbDetalle = bbDetalle;
-    }
-
-    public String getBbUrl() {
-        return this.bbUrl;
-    }
-
-    public void setBbUrl(String bbUrl) {
-        this.bbUrl = bbUrl;
-    }
 }

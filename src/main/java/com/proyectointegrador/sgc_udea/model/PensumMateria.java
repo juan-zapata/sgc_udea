@@ -1,10 +1,14 @@
 package com.proyectointegrador.sgc_udea.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
+@Getter
+@Setter
 @Entity
 @Table(name = "pensum_materia")
 public class PensumMateria {
@@ -18,28 +22,4 @@ public class PensumMateria {
 
     @Column(name = "Pensum_cdpensum")
     private String pensumCdpensum;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getMateriaCdmateria() {
-        return this.materiaCdmateria;
-    }
-
-    public void setMateriaCdmateria(Integer materiaCdmateria) {
-        this.materiaCdmateria = materiaCdmateria;
-    }
-
-    public String getPensumCdpensum() {
-        return this.pensumCdpensum;
-    }
-
-    public void setPensumCdpensum(String pensumCdpensum) {
-        this.pensumCdpensum = pensumCdpensum;
-    }
 }

@@ -1,10 +1,14 @@
 package com.proyectointegrador.sgc_udea.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
+@Getter
+@Setter
 @Entity
 @Table(name = "sede_programa")
 public class SedePrograma {
@@ -19,27 +23,4 @@ public class SedePrograma {
     @Column(name = "sede_id_sede")
     private Integer sedeIdSede;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getProgramaCdprograma() {
-        return this.programaCdprograma;
-    }
-
-    public void setProgramaCdprograma(Integer programaCdprograma) {
-        this.programaCdprograma = programaCdprograma;
-    }
-
-    public Integer getSedeIdSede() {
-        return this.sedeIdSede;
-    }
-
-    public void setSedeIdSede(Integer sedeIdSede) {
-        this.sedeIdSede = sedeIdSede;
-    }
 }

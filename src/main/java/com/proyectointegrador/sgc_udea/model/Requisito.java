@@ -1,10 +1,14 @@
 package com.proyectointegrador.sgc_udea.model;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
+@Getter
+@Setter
 @Entity
 @Table(name = "requisito")
 public class Requisito {
@@ -22,35 +26,4 @@ public class Requisito {
     @Column(name = "tipo")
     private Integer tipo;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Integer getCodMateria() {
-        return this.codMateria;
-    }
-
-    public void setCodMateria(Integer codMateria) {
-        this.codMateria = codMateria;
-    }
-
-    public Integer getCodMatrequisito() {
-        return this.codMatrequisito;
-    }
-
-    public void setCodMatrequisito(Integer codMatrequisito) {
-        this.codMatrequisito = codMatrequisito;
-    }
-
-    public Integer getTipo() {
-        return this.tipo;
-    }
-
-    public void setTipo(Integer tipo) {
-        this.tipo = tipo;
-    }
 }
