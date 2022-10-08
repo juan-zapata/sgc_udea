@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*")
 @RequestMapping("/resultado")
 public class ResultadoController {
 

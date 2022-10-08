@@ -13,10 +13,10 @@ import javax.persistence.*;
 public class Nucleos {
 
     @Id
-    @Column(name = "idNucleos")
+    @Column(name = "id_nucleos")
     private Integer idNucleos;
 
-    @Column(name = "Nnombre")
+    @Column(name = "n_nombre")
     private String nnombre;
 
     @Column(name = "informacion")
