@@ -1,6 +1,5 @@
 package com.proyectointegrador.sgc_udea.controller;
 
-import com.proyectointegrador.sgc_udea.dto.BibliografiaDTO;
 import com.proyectointegrador.sgc_udea.dto.ResultadoDTO;
 import com.proyectointegrador.sgc_udea.service.ResultadoService;
 import org.springframework.http.HttpStatus;
