@@ -1,6 +1,11 @@
 package com.proyectointegrador.sgc_udea.controller;
 
+import co.edu.udea.exception.OrgSistemasSecurityException;
+import co.edu.udea.wsClient.dto.OrgSistemasWSRequest;
 import com.proyectointegrador.sgc_udea.dto.MicroCurriculoDTO;
+import com.proyectointegrador.sgc_udea.request.ConsultarMateriasRequisitosRequest;
+import com.proyectointegrador.sgc_udea.response.ConsultarRequisitosMateria;
+import com.proyectointegrador.sgc_udea.response.MateriasProgramaVersion;
 import com.proyectointegrador.sgc_udea.service.MicroCurriculoService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -50,6 +55,16 @@ public class MicroCurriculoController {
             return new ResponseEntity(this.microCurriculoService.listar(), HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity( null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @ResponseBody
+    @GetMapping("/listar/requisitosmateria")
+    public ResponseEntity<List<MateriasProgramaVersion>> listarRequisitosMateria(@RequestBody ConsultarMateriasRequisitosRequest consulta){
+        try{
+            return new ResponseEntity<>(this.microCurriculoService.consultarRequisitosMateria(consulta), HttpStatus.OK);
+        }catch (Exception | OrgSistemasSecurityException e){
+            return new ResponseEntity<>( null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
