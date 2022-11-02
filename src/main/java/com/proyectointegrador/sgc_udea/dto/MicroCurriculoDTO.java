@@ -10,6 +10,7 @@ import javax.persistence.Column;
 @Getter
 @Setter
 public class MicroCurriculoDTO {
+
     private int codMicrocurriculo;
     private Integer idMateria;
     private String resultadoaprendizaje;
