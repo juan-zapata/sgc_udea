@@ -1,14 +1,11 @@
 package com.proyectointegrador.sgc_udea.service;
 
 import com.proyectointegrador.sgc_udea.dto.ElementoEvaluadorDTO;
-import com.proyectointegrador.sgc_udea.dto.MicroCurriculoDTO;
 import com.proyectointegrador.sgc_udea.model.ElementoEvaluador;
-import com.proyectointegrador.sgc_udea.model.MicroCurriculo;
 import com.proyectointegrador.sgc_udea.repository.ElementoEvaluadorRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import javax.crypto.spec.OAEPParameterSpec;
 import java.util.List;
 import java.util.Optional;
 

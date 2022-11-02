@@ -3,7 +3,7 @@ package com.proyectointegrador.sgc_udea.service;
 import co.edu.udea.exception.OrgSistemasSecurityException;
 import co.edu.udea.wsClient.OrgSistemasWebServiceClient;
 import com.proyectointegrador.sgc_udea.dto.MicroCurriculoDTO;
-import com.proyectointegrador.sgc_udea.model.MicroCurriculo;
+import com.proyectointegrador.sgc_udea.model.MicroCurriculoEntity;
 import com.proyectointegrador.sgc_udea.repository.MicroCurriculoRepository;
 import com.proyectointegrador.sgc_udea.request.ConsultarMateriasRequisitosRequest;
 import com.proyectointegrador.sgc_udea.response.ConsultarRequisitosMateria;
@@ -60,23 +60,23 @@ public class MicroCurriculoService {
 
     }
 
-    public MicroCurriculo save(MicroCurriculoDTO micro) {
+    public MicroCurriculoEntity save(MicroCurriculoDTO micro) {
         ModelMapper mm = new ModelMapper();
-        return microCurriculoRepository.save(mm.map(micro, MicroCurriculo.class));
+        return microCurriculoRepository.save(mm.map(micro, MicroCurriculoEntity.class));
     }
 
-    public MicroCurriculo update(MicroCurriculoDTO micro) {
+    public MicroCurriculoEntity update(MicroCurriculoDTO micro) {
         ModelMapper mm = new ModelMapper();
-        return microCurriculoRepository.save(mm.map(micro, MicroCurriculo.class));
+        return microCurriculoRepository.save(mm.map(micro, MicroCurriculoEntity.class));
     }
 
-    public List<MicroCurriculo> listar() {
+    public List<MicroCurriculoEntity> listar() {
         return microCurriculoRepository.findAll();
     }
 
-    public MicroCurriculo listarPorId(Integer id) {
-        Optional<MicroCurriculo> elemento = microCurriculoRepository.findById(id);
-        return elemento.orElseGet(MicroCurriculo::new);
+    public MicroCurriculoEntity listarPorId(Integer id) {
+        Optional<MicroCurriculoEntity> elemento = microCurriculoRepository.findById(id);
+        return elemento.orElseGet(MicroCurriculoEntity::new);
     }
 
     public void deleteByid(Integer id) {
