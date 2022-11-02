@@ -55,7 +55,7 @@ public class MicroCurriculoController {
     }
 
     @ResponseBody
-    @GetMapping("/listar/requisitosmateria")
+    @PostMapping("/listar/requisitosmateria")
     public ResponseEntity<List<MateriasProgramaVersion>> listarRequisitosMateria(@RequestBody ConsultarMateriasRequisitosRequest consulta){
         try{
             return new ResponseEntity<>(this.microCurriculoService.consultarRequisitosMateria(consulta), HttpStatus.OK);
