@@ -12,13 +12,17 @@ public class consumoMaresTest {
 
         OrgSistemasWebServiceClient client = new OrgSistemasWebServiceClient(false);
 
-        client.addParam("facultad", "25");
+        /*client.addParam("facultad", "25");
+        client.addParam("version", "5");
         client.addParam("programa", "504");
 
-        Object response = client.obtener("consultarmateriasprogramaversion",
+         */
+        client.addParam("codigoMateria", "2508315");
+
+        Object response = client.obtener("consultarmateriasmares",
                 "5facbdd992ecd3e667df2b544e22a80a8274fd59");
 
-        System.out.println("FIN");
+
     }
 
 
