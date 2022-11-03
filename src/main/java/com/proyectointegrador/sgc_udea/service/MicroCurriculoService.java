@@ -6,6 +6,7 @@ import com.proyectointegrador.sgc_udea.dto.MicroCurriculoDTO;
 import com.proyectointegrador.sgc_udea.model.MicroCurriculoEntity;
 import com.proyectointegrador.sgc_udea.repository.MicroCurriculoRepository;
 import com.proyectointegrador.sgc_udea.request.ConsultarMateriasRequisitosRequest;
+import com.proyectointegrador.sgc_udea.response.ConsultarMateriasMares;
 import com.proyectointegrador.sgc_udea.response.ConsultarRequisitosMateria;
 import com.proyectointegrador.sgc_udea.response.MateriasProgramaVersion;
 import org.modelmapper.ModelMapper;
@@ -19,14 +20,12 @@ import java.util.Optional;
 public class MicroCurriculoService {
 
     private final MicroCurriculoRepository microCurriculoRepository;
-
     private final OrgSistemasWebServiceClient orgSistemasWebServiceClient;
 
     private static final String TOKEN = "5facbdd992ecd3e667df2b544e22a80a8274fd59";
-
     private static final String CONSULTAR_MATERIAS_PROGRAMA_VERSION = "consultarmateriasprogramaversion";
-
     private static final String CONSULTAR_REQUISITOS_MATERIA = "consultarrequisitosmateria";
+    private static final String CONSULTAR_MATERIAS_MARES = "consultarmateriasmares";
 
 
     public MicroCurriculoService(MicroCurriculoRepository microCurriculoRepository, OrgSistemasWebServiceClient orgSistemasWebServiceClient) {
@@ -41,6 +40,13 @@ public class MicroCurriculoService {
         return orgSistemasWebServiceClient.obtenerBean(CONSULTAR_MATERIAS_PROGRAMA_VERSION, TOKEN, MateriasProgramaVersion.class);
     }
 
+    private List<ConsultarMateriasMares> consultarMateriasMares(String codigoMateria) throws OrgSistemasSecurityException {
+        orgSistemasWebServiceClient.addParam("codigoMateria", codigoMateria);
+        return orgSistemasWebServiceClient.obtenerBean(CONSULTAR_MATERIAS_MARES,
+                TOKEN, ConsultarMateriasMares.class);
+    }
+
+
     @Transactional
     public List<MateriasProgramaVersion> consultarRequisitosMateria(ConsultarMateriasRequisitosRequest materia) throws OrgSistemasSecurityException {
         orgSistemasWebServiceClient.addParam("facultad", materia.getFacultad());
@@ -49,6 +55,7 @@ public class MicroCurriculoService {
         return consultarMateriasPrograma(materia).stream().filter(consulta -> {
             orgSistemasWebServiceClient.addParam("materia", consulta.getMateria().toString());
             try {
+                consulta.setCreditos(consultarMateriasMares(consulta.getMateria().toString()).get(0).getCreditos());
                 List<ConsultarRequisitosMateria> response = orgSistemasWebServiceClient.obtenerBean(CONSULTAR_REQUISITOS_MATERIA,
                         TOKEN, ConsultarRequisitosMateria.class);
                 consulta.setRequisitos(response);

@@ -23,5 +23,6 @@ public class MateriasProgramaVersion {
     private Integer consecutivoMateria;
     private String nombreBancoElectivas;
     private Integer nivel;
+    private Integer creditos;
     private List<ConsultarRequisitosMateria> requisitos;
 }
