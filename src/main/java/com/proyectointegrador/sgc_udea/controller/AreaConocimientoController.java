@@ -26,11 +26,11 @@ public class AreaConocimientoController {
 
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody AreaConocimientoDTO areaConocimientoDTO){
-        AreaConocimiento areaConocimiento = new AreaConocimiento(areaConocimientoDTO.getIdareaConocimiento(),
-                areaConocimientoDTO.getAcnombre(), areaConocimientoDTO.getAreainformacion(),
-                areaConocimientoDTO.getNucleosIdNucleos());
-        areaConocimientoService.save(areaConocimiento);
-        return new ResponseEntity(HttpStatus.CREATED);
+        try{
+            return new ResponseEntity(this.areaConocimientoService.save(areaConocimientoDTO), HttpStatus.CREATED);
+        }catch (Exception e){
+            return new ResponseEntity( null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @PutMapping("/update")

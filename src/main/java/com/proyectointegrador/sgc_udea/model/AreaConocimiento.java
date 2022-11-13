@@ -22,6 +22,6 @@ public class AreaConocimiento {
     @Column(name = "areainformacion")
     private String areainformacion;
 
-    @Column(name = "Nucleos_idNucleos")
+    @Column(name = "nucleos_id_nucleos")
     private Integer nucleosIdNucleos;
 }

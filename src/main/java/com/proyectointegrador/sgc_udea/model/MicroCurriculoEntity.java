@@ -88,4 +88,22 @@ public class MicroCurriculoEntity {
     @Basic
     @Column(name = "objetivo_especifico")
     private String objetivoEspecifico;
+    @Column(name = "dependencia")
+    private String dependencia;
+    @Column(name = "formacion_academica")
+    private String formacionAcademica;
+    @Column(name = "modalidad")
+    private String modalidad;
+    @Column(name = "unidad")
+    private String unidad;
+    @Column(name = "numero_horas")
+    private String numeroHoras;
+    @Column(name = "fecha")
+    private String fecha;
+    @Column(name = "programa_oferta")
+    private String programaOferta;
+    @Column(name = "profesor")
+    private String profesor;
+
+
 }

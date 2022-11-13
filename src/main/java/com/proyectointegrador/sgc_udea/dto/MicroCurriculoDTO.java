@@ -36,5 +36,13 @@ public class MicroCurriculoDTO {
     private String caracteristicaCurso;
     private String correo;
     private String objetivoEspecifico;
+    private String dependencia;
+    private String formacionAcademica;
+    private String modalidad;
+    private String unidad;
+    private String numeroHoras;
+    private String fecha;
+    private String programaOferta;
+    private String profesor;
 
 }

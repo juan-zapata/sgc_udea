@@ -34,10 +34,10 @@ public class Materia {
     private String nivel;
 
     @Column(name = "clasificable")
-    private Byte clasificable;
+    private String clasificable;
 
     @Column(name = "validable")
-    private Byte validable;
+    private String validable;
 
     @Column(name = "horasteoricopracticas")
     private String horasteoricopracticas;

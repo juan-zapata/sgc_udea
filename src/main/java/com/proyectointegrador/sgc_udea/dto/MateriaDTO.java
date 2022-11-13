@@ -16,8 +16,8 @@ public class MateriaDTO {
     private String horasteoricas;
     private String horaspracticas;
     private String nivel;
-    private Byte clasificable;
-    private Byte validable;
+    private String clasificable;
+    private String validable;
     private String horasteoricopracticas;
     private String creditos;
     private String responsable;

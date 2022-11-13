@@ -1,9 +1,12 @@
 package com.proyectointegrador.sgc_udea.service;
 
+import com.proyectointegrador.sgc_udea.dto.AreaConocimientoDTO;
 import com.proyectointegrador.sgc_udea.model.AreaConocimiento;
 import com.proyectointegrador.sgc_udea.model.Materia;
 import com.proyectointegrador.sgc_udea.model.Persona;
+import com.proyectointegrador.sgc_udea.model.Requisito;
 import com.proyectointegrador.sgc_udea.repository.AreaConocimientoRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,8 +22,9 @@ public class AreaConocimientoService {
         this.areaConocimientoRepository = areaConocimientoRepository;
     }
     @Transactional
-    public void save(AreaConocimiento areaConocimiento){
-        areaConocimientoRepository.save(areaConocimiento);
+    public AreaConocimiento save(AreaConocimientoDTO areaConocimiento){
+        ModelMapper mm = new ModelMapper();
+        return areaConocimientoRepository.saveAndFlush(mm.map(areaConocimiento, AreaConocimiento.class));
     }
     public AreaConocimiento update(AreaConocimiento area){
         AreaConocimiento areaUpdate = areaConocimientoRepository.findById(area.getIdareaConocimiento()).get();
