@@ -15,7 +15,7 @@ public class MicroCurriculoEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "cod_microcurriculo")
-    private int codMicrocurriculo;
+    private Integer codMicrocurriculo;
     @Basic
     @Column(name = "id_materia")
     private Integer idMateria;
@@ -23,7 +23,7 @@ public class MicroCurriculoEntity {
     @Column(name = "resultadoaprendizaje")
     private String resultadoaprendizaje;
     @Basic
-    @Column(name = "tipoContenido")
+    @Column(name = "tipo_contenido")
     private String tipoContenido;
     @Basic
     @Column(name = "cproposito")
@@ -32,17 +32,17 @@ public class MicroCurriculoEntity {
     @Column(name = "cjustificacion")
     private String cjustificacion;
     @Basic
-    @Column(name = "cobjetivoGeneral")
+    @Column(name = "cobjetivo_general")
     private String cobjetivoGeneral;
     @Basic
-    @Column(name = "cContenido")
+    @Column(name = "c_contenido")
     private String cContenido;
     @Basic
-    @Column(name = "cMetodologia")
+    @Column(name = "c_metodologia")
     private String cMetodologia;
     @Basic
     @Column(name = "elaboro")
-    private int elaboro;
+    private Integer elaboro;
     @Basic
     @Column(name = "unidad_academica")
     private String unidadAcademica;

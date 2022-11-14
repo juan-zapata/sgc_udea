@@ -11,7 +11,7 @@ import javax.persistence.Column;
 @Setter
 public class MicroCurriculoDTO {
 
-    private int codMicrocurriculo;
+    private Integer codMicrocurriculo;
     private Integer idMateria;
     private String resultadoaprendizaje;
     private String tipoContenido;
@@ -20,7 +20,7 @@ public class MicroCurriculoDTO {
     private String cobjetivoGeneral;
     private String cContenido;
     private String cMetodologia;
-    private int elaboro;
+    private Integer elaboro;
     private String unidadAcademica;
     private String programaAcademico;
     private String vigencia;

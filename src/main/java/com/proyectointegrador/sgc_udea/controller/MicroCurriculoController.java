@@ -28,8 +28,7 @@ public class MicroCurriculoController {
     @PostMapping("/create")
     public ResponseEntity<?> create(@Validated @RequestBody MicroCurriculoDTO microCurriculoDTO){
         try{
-            microCurriculoService.save(microCurriculoDTO);
-            return new ResponseEntity(HttpStatus.CREATED);
+            return new ResponseEntity(microCurriculoService.save(microCurriculoDTO),HttpStatus.CREATED);
         }catch (Exception e){
             System.out.println(e);
             return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
