@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "micro_curriculo")
 public class MicroCurriculoEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "cod_microcurriculo")
     private Integer codMicrocurriculo;
